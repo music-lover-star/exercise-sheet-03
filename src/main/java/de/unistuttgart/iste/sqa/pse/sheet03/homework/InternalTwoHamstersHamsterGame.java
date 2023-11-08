@@ -29,7 +29,6 @@ public abstract class InternalTwoHamstersHamsterGame extends InspectableSimpleHa
 	@Override
 	protected void run() {
 		hamsterRun();
-		game.stopGame();
 	}
 
 	/**
