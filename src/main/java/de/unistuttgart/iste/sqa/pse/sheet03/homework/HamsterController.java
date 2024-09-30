@@ -4,89 +4,92 @@ import de.hamstersimulator.objectsfirst.external.model.Hamster;
 
 /**
  *
- * A control unit to control hamsters.
+ * A control unit to control a hamster.
  *
  * A HamsterController knows some behavioural patterns for hamsters and makes
- * given hamsters act according to those patterns.
+ * the controlled hamsters act according to those patterns.
  *
  * @author (Your name)
  *
  */
 public class HamsterController {
 
-	/*@
-	@ requires hamster != null;
-	@ ensures !hamster.grainAvailable();
-	@*/
+	private Hamster controlledHamster;
+
 	/**
-	 * Pick all grains on the hamster's tile.
+	 * Create a new controller for the controlling the given hamster.
 	 *
-	 * @param hamster The hamster that picks the grains.
+	 * @param hamster The hamster that will be controlled, must not be null.
 	 */
-	void pickAllGrains(Hamster hamster) {
-		hamster.write("Executing pickAllGrains:");
+	public HamsterController(Hamster hamster) {
+		this.controlledHamster = hamster;
+	}
+
+	/**
+	 * Pick all grains on the controlled hamster's tile.
+	 *
+	 * Ensures that the tile is empty.
+	 */
+	void pickAllGrains() {
+		controlledHamster.write("Executing pickAllGrains:");
 		Integer counter = 0;
-		while (hamster.grainAvailable()) {
-			hamster.pickGrain();
+		while (controlledHamster.grainAvailable()) {
+			controlledHamster.pickGrain();
 			counter++;
 		}
-		hamster.write(String.format("%d available grains on my Tile. I picked all of them!", counter));
+		controlledHamster.write(String.format("%d available grains on my Tile. I picked all of them!", counter));
 	}
 
-	/*@
-	@ requires hamster != null;
-	@ ensures hamster.mouthEmpty();
-	@*/
 	/**
-	 * Put all of the hamster's grain on the current tile.
+	 * Put all the controlled hamster's grain on the current tile.
 	 *
-	 * @param hamster The hamster that puts the grains.
+	 * Ensures that the controlled hamster's mouth is empty.
 	 */
-	void putAllGrains(Hamster hamster) {
-		hamster.write("Executing putAllGrains:");
+	void putAllGrains() {
+		controlledHamster.write("Executing putAllGrains:");
 		Integer counter = 0;
-		while (!hamster.mouthEmpty()) {
-			hamster.putGrain();
+		while (!controlledHamster.mouthEmpty()) {
+			controlledHamster.putGrain();
 			counter++;
 		}
-		hamster.write(String.format("I had %d grains in my mouth. I put all of them on my Tile!", counter));
+		controlledHamster.write(String.format("I had %d grains in my mouth. I put all of them on my Tile!", counter));
 	}
 
-	// TODO replace this comment with JavaDoc
-	void helper0(Hamster hamster) {
-		hamster.write("Executing helper0:");
-		hamster.turnLeft();
-		hamster.move();
-		hamster.turnLeft();
-		hamster.write("I ran a half circle!");
+	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
+	void helper0() {
+		controlledHamster.write("Executing helper0:");
+		controlledHamster.turnLeft();
+		controlledHamster.move();
+		controlledHamster.turnLeft();
+		controlledHamster.write("I ran a half circle!");
 	}
 
-	// TODO replace this comment with JavaDoc
-	void helper1(Hamster hamster) {
-		hamster.write("Executing helper1:");
-		while (hamster.frontIsClear()) {
-			pickAllGrains(hamster);
-			hamster.move();
+	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
+	void helper1() {
+		controlledHamster.write("Executing helper1:");
+		while (controlledHamster.frontIsClear()) {
+			pickAllGrains();
+			controlledHamster.move();
 		}
-		hamster.write("I picked all grains, on the tile behind me!");
+		controlledHamster.write("I picked all grains, on the tile behind me!");
 	}
 
-	// TODO replace this comment with JavaDoc
-	void helper2(Hamster hamster, Integer turns) {
-		hamster.write("Executing helper3:");
+	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
+	void helper2(Integer turns) {
+		controlledHamster.write("Executing helper2:");
 		for (Integer i = 0; i < turns; i++) {
-			hamster.turnLeft();
+			controlledHamster.turnLeft();
 		}
-		hamster.write(String.format("I turned %d times!", turns));
+		controlledHamster.write(String.format("I turned %d times!", turns));
 	}
 
-	// TODO replace this comment with JavaDoc
-	void helper3(Hamster hamster, Integer steps) {
-		hamster.write("Executing helper4:");
+	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
+	void helper3(Integer steps) {
+		controlledHamster.write("Executing helper3:");
 		Integer counter = 0;
-		for (; counter < steps && hamster.frontIsClear(); counter++) {
-			hamster.move();
+		for (; counter < steps && controlledHamster.frontIsClear(); counter++) {
+			controlledHamster.move();
 		}
-		hamster.write(String.format("I moved %d out of %d steps!", counter, steps));
+		controlledHamster.write(String.format("I moved %d out of %d steps!", counter, steps));
 	}
 }

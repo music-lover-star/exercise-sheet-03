@@ -11,8 +11,9 @@ import de.hamstersimulator.objectsfirst.inspector.InspectableSimpleHamsterGame;
  */
 public abstract class InternalTwoHamstersHamsterGame extends InspectableSimpleHamsterGame {
 
-	Hamster paula;
-	HamsterController controller;
+	Hamster tiffany;
+	HamsterController controllerTiffany;
+	HamsterController controllerPaule;
 
 	/**
 	 * This constructor is used for loading a territory for the game and for displaying it.
@@ -22,8 +23,9 @@ public abstract class InternalTwoHamstersHamsterGame extends InspectableSimpleHa
 		this.displayInNewGameWindow();
 
 		game.startGame();
-		paula = new Hamster(game.getTerritory(), Location.from(1, 5), Direction.SOUTH, 0);
-		controller = new HamsterController();
+		tiffany = new Hamster(game.getTerritory(), Location.from(1, 5), Direction.SOUTH, 0);
+		controllerTiffany = new HamsterController(tiffany);
+		controllerPaule = new HamsterController(paule);
 	}
 
 	@Override
