@@ -21,9 +21,17 @@ public class HamsterController {
 	 *
 	 * @param hamster The hamster that will be controlled, must not be null.
 	 */
-	public HamsterController(Hamster hamster) {
+	public HamsterController {
 		this.controlledHamster = hamster;
-	}
+		
+
+		
+		controlledHamster.write("Executing pickAllGrains:");
+		Integer counter = 0;
+		while (controlledHamster.grainAvailable()) {
+			controlledHamster.pickGrain();
+			counter++;						
+		
 
 	/**
 	 * Pick all grains on the controlled hamster's tile.
@@ -31,11 +39,60 @@ public class HamsterController {
 	 * Ensures that the tile is empty.
 	 */
 	void pickAllGrains() {
-		controlledHamster.write("Executing pickAllGrains:");
-		Integer counter = 0;
-		while (controlledHamster.grainAvailable()) {
-			controlledHamster.pickGrain();
-			counter++;
+		// move in the direction of the first grain
+		controlledhamster.move();
+		// pick up the first grain
+		controlledhamster.pickGrain();
+		// move in the direction of the second grain
+		controlledhamster.move();
+		// pick up the second grain
+		controlledhamster.pickGrain();
+		// turn in the direction of the third and fourth grain
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		// move in the direction of the  third and fourth grain
+		controlledhamster.ove();
+		// pick up the grains
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		
+		// move in the direction of the fifth grain
+		controlledhamster.move();
+		// turn in the direction of the fifth grain
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		// pick up the  grain
+		controlledhamster.pickGrain();
+		// move in the direction of the sixth, seventh, eighth and nineth grain
+		controlledhamster.move();
+		// turn in the direction of the sixth, seventh, eighth and nineth grain
+		controlledhamster.turnLeft();
+		// move in the direction of the sixth, seventh, eighth and nineth grain
+		controlledhamster.move();
+		// pick up the grains
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		// turn in the direction of the treffpunkt
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		// move in the direction of the treffpunkt
+		controlledhamster.move();
+		controlledhamster.move();
+		controlledhamster.move();
+tiffany = new Hamster();
+
+	/**
+	 * Pick all grains on the controlled hamster's tile.
+	 *
+	 * Ensures that the tile is empty.
+	 */
+	void pickAllGrains() 
+
+			
 		}
 		controlledHamster.write(String.format("%d available grains on my Tile. I picked all of them!", counter));
 	}
@@ -55,41 +112,98 @@ public class HamsterController {
 		controlledHamster.write(String.format("I had %d grains in my mouth. I put all of them on my Tile!", counter));
 	}
 
-	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper0() {
-		controlledHamster.write("Executing helper0:");
-		controlledHamster.turnLeft();
-		controlledHamster.move();
-		controlledHamster.turnLeft();
-		controlledHamster.write("I ran a half circle!");
+	// Ttiffany = new Hamster();
+		tiffany.int(territory, location, direction,1)
+		// move in the direction of the grains
+		tiffany.move();
+		// pick up the grains
+		tiffany.pickGrain();
+		tiffany.pickGrain();
+		tiffany.pckGrain();
+		tiffany.pickGrain();
+		// turn in the direction of the Grains
+		tiffany.turnLeft();
+		//move in the direction of the grains
+		tiffany.move();
+		tiffany.move();
+		// pick up the grains
+		tiffany.pickGrains();
+		tiffany.pickGrains();
+		tiffany.pickGrains();
+		tiffany.pickGrains();
+		tiffany.pickGrains();
+		tiffany.pickGrains();
+		// turn in the direction of the grains
+		tiffany.turnLeft();
+		tiffany.turnLeft();
+		tiffany.turnLeft();
+		// move in the directions of the grains
+		tiffany.move();
+		tiffany.move();
+		// pick up the grains
+		tiffany.pickGrains();
+		tiffany.pickGrains();
+		// turn in the direction of the treffpunkt
+		tiffany.turnLeft();
+		tiffany.turnLeft();
+		tiffany.turnLeft();
+		// move in the direction of the treffpunkt
+		tiffany.move();
+		tiffany.move();
+		tiffany.move();
+										
+		
+		
 	}
 
-	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper1() {
-		controlledHamster.write("Executing helper1:");
-		while (controlledHamster.frontIsClear()) {
-			pickAllGrains();
-			controlledHamster.move();
-		}
-		controlledHamster.write("I picked all grains, on the tile behind me!");
+	/**
+	 * Pick all grains on the controlled hamster's tile.
+	 *
+	 * Ensures that the tile is empty.
+	 */
+	void pickAllGrains() {
+		// move in the direction of the first grain
+		controlledhamster.move();
+		// pick up the first grain
+		controlledhamster.pickGrain();
+		// move in the direction of the second grain
+		controlledhamster.move();
+		// pick up the second grain
+		controlledhamster.pickGrain();
+		// turn in the direction of the third and fourth grain
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		// move in the direction of the  third and fourth grain
+		controlledhamster.ove();
+		// pick up the grains
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		
+		// move in the direction of the fifth grain
+		controlledhamster.move();
+		// turn in the direction of the fifth grain
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		// pick up the  grain
+		controlledhamster.pickGrain();
+		// move in the direction of the sixth, seventh, eighth and nineth grain
+		controlledhamster.move();
+		// turn in the direction of the sixth, seventh, eighth and nineth grain
+		controlledhamster.turnLeft();
+		// move in the direction of the sixth, seventh, eighth and nineth grain
+		controlledhamster.move();
+		// pick up the grains
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		controlledhamster.pickGrain();
+		// turn in the direction of the treffpunkt
+		controlledhamster.turnLeft();
+		controlledhamster.turnLeft();
+		// move in the direction of the treffpunkt
+		controlledhamster.move();
+		controlledhamster.move();
+		controlledhamster.move();
 	}
-
-	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper2(Integer turns) {
-		controlledHamster.write("Executing helper2:");
-		for (Integer i = 0; i < turns; i++) {
-			controlledHamster.turnLeft();
-		}
-		controlledHamster.write(String.format("I turned %d times!", turns));
-	}
-
-	// TODO replace this comment with JavaDoc, including Pre and Post Conditions.
-	void helper3(Integer steps) {
-		controlledHamster.write("Executing helper3:");
-		Integer counter = 0;
-		for (; counter < steps && controlledHamster.frontIsClear(); counter++) {
-			controlledHamster.move();
-		}
-		controlledHamster.write(String.format("I moved %d out of %d steps!", counter, steps));
-	}
-}
